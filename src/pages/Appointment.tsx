@@ -4,11 +4,13 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useToast } from "@/hooks/use-toast";
-import { CalendarIcon, Phone, MessageCircle } from "lucide-react";
+import { CalendarIcon, Phone, MessageCircle, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
 
 const AppointmentPage = () => {
   const { toast } = useToast();
@@ -16,16 +18,39 @@ const AppointmentPage = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState<Date>();
+  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone) {
       toast({ title: "Please fill in required fields", variant: "destructive" });
       return;
     }
-    setSubmitted(true);
-    toast({ title: "Appointment Request Sent!", description: "We'll contact you shortly to confirm your appointment." });
+
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-appointment-email", {
+        body: {
+          name,
+          phone,
+          email: email || undefined,
+          date: date ? format(date, "PPP") : undefined,
+          message: message || undefined,
+        },
+      });
+
+      if (error) throw error;
+
+      setSubmitted(true);
+      toast({ title: "Appointment Request Sent!", description: "We'll contact you shortly to confirm your appointment." });
+    } catch (err) {
+      console.error("Failed to send appointment:", err);
+      toast({ title: "Something went wrong", description: "Please try again or contact us directly.", variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -40,8 +65,8 @@ const AppointmentPage = () => {
           {submitted ? (
             <div className="text-center py-12 bg-secondary rounded-xl">
               <h2 className="text-2xl font-bold text-foreground mb-2">Thank You!</h2>
-              <p className="text-muted-foreground mb-4">Your appointment request has been received. We'll call you shortly.</p>
-              <Button onClick={() => setSubmitted(false)} variant="outline">Book Another</Button>
+              <p className="text-muted-foreground mb-4">Your appointment request has been received. We will contact you shortly.</p>
+              <Button onClick={() => { setSubmitted(false); setName(""); setPhone(""); setEmail(""); setDate(undefined); setMessage(""); }} variant="outline">Book Another</Button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5 bg-card rounded-xl border p-6 md:p-8 shadow-sm">
@@ -78,7 +103,13 @@ const AppointmentPage = () => {
                   </PopoverContent>
                 </Popover>
               </div>
-              <Button type="submit" className="w-full" size="lg">Request Appointment</Button>
+              <div className="space-y-2">
+                <Label htmlFor="message">Message (Optional)</Label>
+                <Textarea id="message" placeholder="Any specific concerns or requests..." value={message} onChange={(e) => setMessage(e.target.value)} rows={3} />
+              </div>
+              <Button type="submit" className="w-full" size="lg" disabled={loading}>
+                {loading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" />Sending...</> : "Request Appointment"}
+              </Button>
             </form>
           )}
 
