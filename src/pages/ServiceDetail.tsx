@@ -14,16 +14,28 @@ interface ServiceData {
 }
 
 const servicesData: Record<string, ServiceData> = {
-  "teeth-cleaning": {
-    title: "Teeth Cleaning",
-    description: "Professional teeth cleaning (scaling and polishing) removes plaque, tartar, and surface stains that regular brushing can't reach. Our ultrasonic scaling technology ensures a comfortable, thorough cleaning experience.",
-    whoNeeds: ["Anyone with plaque or tartar buildup", "People with bleeding or swollen gums", "Smokers or heavy tea/coffee drinkers", "Anyone who hasn't had a cleaning in 6+ months"],
-    benefits: ["Prevents gum disease and cavities", "Removes bad breath", "Brighter, cleaner-looking teeth", "Early detection of dental issues"],
-    price: "₹500 – ₹2,000",
+  "dental-implants": {
+    title: "Dental Implants",
+    description: "Dental implants are titanium posts surgically placed into the jawbone to replace missing tooth roots. They provide a strong foundation for permanent or removable replacement teeth that are made to match your natural teeth.",
+    whoNeeds: ["Patients with one or more missing teeth", "Those with ill-fitting dentures", "People who want a permanent tooth replacement", "Patients with sufficient jawbone density"],
+    benefits: ["Looks and feels like natural teeth", "Lasts a lifetime with proper care", "Preserves jawbone and facial structure", "No need to modify adjacent teeth"],
+    price: "₹20,000 – ₹50,000 per implant",
     faqs: [
-      { q: "How often should I get my teeth cleaned?", a: "We recommend professional cleaning every 6 months for most patients." },
-      { q: "Does teeth cleaning hurt?", a: "No, modern ultrasonic cleaning is gentle and virtually painless." },
-      { q: "How long does the procedure take?", a: "A typical cleaning session takes 30–45 minutes." },
+      { q: "How long do dental implants last?", a: "With proper care, dental implants can last a lifetime." },
+      { q: "Is the surgery painful?", a: "The procedure is done under local anesthesia and is generally well-tolerated." },
+      { q: "How long is the recovery?", a: "Initial healing takes 1–2 weeks; full integration with bone takes 3–6 months." },
+    ],
+  },
+  "teeth-whitening": {
+    title: "Teeth Whitening",
+    description: "Our professional in-office teeth whitening uses advanced LED-activated gel to safely brighten your teeth by several shades in just one session. We also offer take-home whitening kits for gradual results.",
+    whoNeeds: ["People with stained or discolored teeth", "Smokers or heavy tea/coffee drinkers", "Anyone preparing for a special occasion", "Patients wanting a brighter, more confident smile"],
+    benefits: ["Noticeably whiter teeth in one visit", "Safe and supervised procedure", "Long-lasting results with proper care", "Boosts confidence and self-esteem"],
+    price: "₹3,000 – ₹10,000",
+    faqs: [
+      { q: "How long does the whitening effect last?", a: "Results typically last 6–12 months with good oral hygiene." },
+      { q: "Is teeth whitening safe?", a: "Yes, professional whitening under dental supervision is completely safe." },
+      { q: "Will it make my teeth sensitive?", a: "Some patients experience mild, temporary sensitivity which resolves within a day or two." },
     ],
   },
   "root-canal": {
@@ -38,16 +50,16 @@ const servicesData: Record<string, ServiceData> = {
       { q: "Do I need a crown after root canal?", a: "Yes, a crown is usually recommended to protect and strengthen the treated tooth." },
     ],
   },
-  "dental-implants": {
-    title: "Dental Implants",
-    description: "Dental implants are titanium posts surgically placed into the jawbone to replace missing tooth roots. They provide a strong foundation for permanent or removable replacement teeth that are made to match your natural teeth.",
-    whoNeeds: ["Patients with one or more missing teeth", "Those with ill-fitting dentures", "People who want a permanent tooth replacement", "Patients with sufficient jawbone density"],
-    benefits: ["Looks and feels like natural teeth", "Lasts a lifetime with proper care", "Preserves jawbone and facial structure", "No need to modify adjacent teeth"],
-    price: "₹20,000 – ₹50,000 per implant",
+  "smile-makeover": {
+    title: "Smile Makeover",
+    description: "A smile makeover combines multiple cosmetic dental procedures — such as veneers, bonding, whitening, and gum contouring — to completely transform your smile. Each plan is customized to your unique facial features and goals.",
+    whoNeeds: ["Patients with chipped, cracked, or worn teeth", "Those with uneven or discolored teeth", "People wanting a complete smile transformation", "Patients with gaps or minor misalignment"],
+    benefits: ["Dramatic improvement in smile aesthetics", "Customized treatment plan", "Boosts confidence and self-image", "Long-lasting, natural-looking results"],
+    price: "₹10,000 – ₹1,00,000",
     faqs: [
-      { q: "How long do dental implants last?", a: "With proper care, dental implants can last a lifetime." },
-      { q: "Is the surgery painful?", a: "The procedure is done under local anesthesia and is generally well-tolerated." },
-      { q: "How long is the recovery?", a: "Initial healing takes 1–2 weeks; full integration with bone takes 3–6 months." },
+      { q: "How long does a smile makeover take?", a: "Depending on the procedures involved, it can take 2 weeks to a few months." },
+      { q: "Is a smile makeover painful?", a: "Most procedures are minimally invasive and done under local anesthesia." },
+      { q: "How long do results last?", a: "With proper care, results can last 10–15 years or more." },
     ],
   },
   "braces-aligners": {
@@ -60,18 +72,6 @@ const servicesData: Record<string, ServiceData> = {
       { q: "How long do I need to wear braces?", a: "Treatment typically takes 12–24 months, depending on the complexity." },
       { q: "Are clear aligners as effective as braces?", a: "For most cases, yes. Your orthodontist will recommend the best option." },
       { q: "Is there an age limit for braces?", a: "No, both teens and adults can benefit from orthodontic treatment." },
-    ],
-  },
-  "teeth-whitening": {
-    title: "Teeth Whitening",
-    description: "Our professional in-office teeth whitening uses advanced LED-activated gel to safely brighten your teeth by several shades in just one session. We also offer take-home whitening kits for gradual results.",
-    whoNeeds: ["People with stained or discolored teeth", "Smokers or heavy tea/coffee drinkers", "Anyone preparing for a special occasion", "Patients wanting a brighter, more confident smile"],
-    benefits: ["Noticeably whiter teeth in one visit", "Safe and supervised procedure", "Long-lasting results with proper care", "Boosts confidence and self-esteem"],
-    price: "₹3,000 – ₹10,000",
-    faqs: [
-      { q: "How long does the whitening effect last?", a: "Results typically last 6–12 months with good oral hygiene." },
-      { q: "Is teeth whitening safe?", a: "Yes, professional whitening under dental supervision is completely safe." },
-      { q: "Will it make my teeth sensitive?", a: "Some patients experience mild, temporary sensitivity which resolves within a day or two." },
     ],
   },
 };
@@ -147,7 +147,7 @@ const ServiceDetailPage = () => {
             <div className="rounded-xl border bg-secondary p-6">
               <h3 className="text-sm font-semibold text-foreground mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>Need Help?</h3>
               <p className="text-sm text-muted-foreground mb-3">Call us for a free consultation</p>
-              <a href="tel:+919876543210" className="text-primary font-semibold">+91 98765 43210</a>
+              <a href="tel:+918999751605" className="text-primary font-semibold">+91 89997 51605</a>
             </div>
           </div>
         </div>

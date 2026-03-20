@@ -17,11 +17,9 @@ const AboutPage = () => (
 
         <div>
           <span className="text-sm font-medium text-primary mb-2 block">About the Doctor</span>
-          <h1 className="text-4xl font-bold text-foreground mb-4">Dr. [Name]</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">Dr. Ratnika Agarwal</h1>
           <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            With over 15 years of experience in dentistry, Dr. [Name] is committed to providing 
-            gentle, patient-centered dental care. A firm believer in painless treatment and 
-            preventive care, Dr. [Name] has transformed thousands of smiles across Pune.
+            Dr. Ratnika's Smile Up Dental Clinic is dedicated to providing modern dental care with a gentle and patient-first approach. We focus on comfort, hygiene, and delivering long-lasting results using advanced technology.
           </p>
 
           <div className="grid grid-cols-2 gap-4 mb-8">
