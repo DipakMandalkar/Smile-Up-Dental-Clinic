@@ -24,7 +24,7 @@ const Header = () => {
             S
           </div>
           <span className="text-lg font-bold text-foreground" style={{ fontFamily: "'Playfair Display', serif" }}>
-            SmileCare
+            Smile Up Dental
           </span>
         </Link>
 
@@ -46,8 +46,8 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-          <a href="tel:+919876543210" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary">
-            <Phone className="h-4 w-4" /> +91 98765 43210
+          <a href="tel:+918999751605" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary">
+            <Phone className="h-4 w-4" /> +91 89997 51605
           </a>
           <Button asChild size="sm">
             <Link to="/appointment">Book Appointment</Link>

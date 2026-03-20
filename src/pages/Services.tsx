@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import { Sparkles, Shield, Heart, Star, ArrowRight } from "lucide-react";
 
 const services = [
-  { title: "Teeth Cleaning", slug: "teeth-cleaning", icon: Sparkles, desc: "Professional cleaning to remove plaque and tartar for a brighter smile.", price: "₹500 – ₹2,000" },
-  { title: "Root Canal Treatment", slug: "root-canal", icon: Shield, desc: "Save your natural tooth with our painless root canal procedures.", price: "₹3,000 – ₹8,000" },
   { title: "Dental Implants", slug: "dental-implants", icon: Heart, desc: "Permanent, natural-looking replacements for missing teeth.", price: "₹20,000 – ₹50,000" },
-  { title: "Braces & Aligners", slug: "braces-aligners", icon: Sparkles, desc: "Straighten your teeth with traditional braces or invisible aligners.", price: "₹25,000 – ₹1,50,000" },
   { title: "Teeth Whitening", slug: "teeth-whitening", icon: Star, desc: "Professional whitening for a dazzling smile in just one session.", price: "₹3,000 – ₹10,000" },
+  { title: "Root Canal Treatment", slug: "root-canal", icon: Shield, desc: "Save your natural tooth with our painless root canal procedures.", price: "₹3,000 – ₹8,000" },
+  { title: "Smile Makeover", slug: "smile-makeover", icon: Sparkles, desc: "Complete smile transformation with cosmetic dentistry.", price: "₹10,000 – ₹1,00,000" },
+  { title: "Braces & Aligners", slug: "braces-aligners", icon: Sparkles, desc: "Straighten your teeth with traditional braces or invisible aligners.", price: "₹25,000 – ₹1,50,000" },
 ];
 
 const ServicesPage = () => (

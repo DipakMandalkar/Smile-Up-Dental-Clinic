@@ -7,11 +7,12 @@ const Footer = () => (
       <div className="grid gap-8 md:grid-cols-4">
         {/* Brand */}
         <div>
-          <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
-            SmileCare Dental
+          <h3 className="text-xl font-bold mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+            Dr Ratnika's - Smile Up Dental Clinic
           </h3>
+          <p className="text-sm opacity-80 mb-3">डॉ रत्निका's - स्माइल अप डेंटल क्लिनिक</p>
           <p className="text-sm opacity-80 leading-relaxed">
-            Advanced & Painless Dental Treatments. Trusted by families across Pune since 2010.
+            Advanced & Painless Dental Treatments. Trusted by families in Kharadi, Pune.
           </p>
           <div className="flex gap-3 mt-4">
             <a href="#" aria-label="Facebook" className="opacity-70 hover:opacity-100"><Facebook className="h-5 w-5" /></a>
@@ -43,9 +44,9 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-70">Contact</h4>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0" /> 123, MG Road, Shivaji Nagar, Pune, Maharashtra 411005</li>
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" /> +91 98765 43210</li>
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0" /> info@smilecarepune.com</li>
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0" /> Shop No 109, Upper Ground Floor, Gera's Park View, near Eon Free Zone Road, Kharadi, Pune 411014</li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" /> +91 89997 51605</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0" /> info@smileupdental.com</li>
           </ul>
         </div>
 
@@ -53,14 +54,14 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider opacity-70">Clinic Hours</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2"><Clock className="h-4 w-4 shrink-0" /> Mon – Sat: 9:00 AM – 8:00 PM</li>
-            <li className="pl-6">Sunday: 10:00 AM – 2:00 PM</li>
+            <li className="flex items-center gap-2"><Clock className="h-4 w-4 shrink-0" /> Mon – Sat: 8:00 AM – 5:00 PM</li>
+            <li className="pl-6">Sunday: Closed</li>
           </ul>
         </div>
       </div>
 
       <div className="mt-10 border-t border-background/20 pt-6 text-center text-xs opacity-60">
-        © {new Date().getFullYear()} SmileCare Dental Clinic. All rights reserved.
+        © {new Date().getFullYear()} Dr Ratnika's - Smile Up Dental Clinic. All rights reserved.
       </div>
     </div>
   </footer>
